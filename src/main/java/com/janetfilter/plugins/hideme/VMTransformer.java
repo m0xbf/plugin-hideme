@@ -7,8 +7,6 @@ import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.tree.*;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Iterator;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
@@ -57,7 +55,6 @@ public class VMTransformer implements MyTransformer {
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
         node.accept(writer);
 
-        Files.write(Paths.get("/Users/neo/Downloads/im.class"), writer.toByteArray());
         return writer.toByteArray();
     }
 }
