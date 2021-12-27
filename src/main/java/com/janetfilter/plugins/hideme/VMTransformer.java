@@ -1,6 +1,5 @@
 package com.janetfilter.plugins.hideme;
 
-
 import com.janetfilter.core.Environment;
 import com.janetfilter.core.plugin.MyTransformer;
 import jdk.internal.org.objectweb.asm.ClassReader;

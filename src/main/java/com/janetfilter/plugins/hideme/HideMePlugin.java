@@ -1,9 +1,8 @@
 package com.janetfilter.plugins.hideme;
 
-
 import com.janetfilter.core.Environment;
-import com.janetfilter.core.models.FilterRule;
 import com.janetfilter.core.plugin.MyTransformer;
+import com.janetfilter.core.plugin.PluginConfig;
 import com.janetfilter.core.plugin.PluginEntry;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class HideMePlugin implements PluginEntry {
     private final List<MyTransformer> transformers = new ArrayList<>();
 
     @Override
-    public void init(Environment environment, List<FilterRule> filterRules) {
+    public void init(Environment environment, PluginConfig config) {
         transformers.add(new VMTransformer(environment));
         transformers.add(new ClassNameTransformer());
     }
@@ -30,7 +29,7 @@ public class HideMePlugin implements PluginEntry {
 
     @Override
     public String getVersion() {
-        return "v1.0.0";
+        return "v1.1.0";
     }
 
     @Override
